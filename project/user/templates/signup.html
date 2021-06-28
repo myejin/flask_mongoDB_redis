@@ -1,0 +1,30 @@
+{% with msg = get_flashed_messages() %} 
+    {% if msg %} 
+        <script> alert("{{msg[-1]}}") </script> 
+    {% endif %} 
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <form class="form-signin" method="POST" >
+        {{form.csrf_token}}
+        <h2 class="form-signin-heading">회원가입</h2>
+        {{form.userid(class="form-control", placeholder="ID (영문, 숫자 포함 7-15자리)")}}
+        {{form.password(class="form-control", placeholder="PW (영문, 숫자, 특수문자 포함 7-15자리)")}}
+        {{form.re_pw(class="form-control", placeholder="PW 확인 (PW와 같게 입력)")}}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div> 
+  </body>
+<html>
