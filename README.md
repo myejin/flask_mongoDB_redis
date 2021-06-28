@@ -1,14 +1,22 @@
-# 개요
+# 프로젝트 개요
 회원가입, 로그인, 로그아웃 기능 포함하는 Flask 어플리케이션 구현 
 <br>pytest 활용해 유닛테스트 코드 구현
 <br><br>
 
-# 실행
+# 실행방법
 ```bash
 $ /bin/bash settings.sh
 $ python3 app.py
 ```
 'http://localhost:5000' 접속 >> 홈 화면으로 이동
+<br><br>
+
+# 파이썬 모듈
+  - flask
+  - pymongo 
+  - redis 
+  - Flask-WTF 
+  - Flask-Session
 <br><br>
 
 # UI 테스트
