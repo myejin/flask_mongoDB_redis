@@ -26,7 +26,7 @@ class Signup(MethodView):
         }
         conn.db.user.insert_one(doc)
         # 에러핸들러
-        flash('회원가입 성공!') 
+        flash('회원가입 성공!', 'no error') 
         conn.close()
         return redirect('/')
         
@@ -43,7 +43,7 @@ class Login(MethodView):
                     return redirect('/login/')
 
         session['userid'] = form.data.get('userid')
-        flash('로그인 되었습니다!')
+        flash('로그인 되었습니다!', 'no error')
         return redirect('/')
         
     def get(self):
