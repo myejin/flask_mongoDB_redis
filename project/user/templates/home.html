@@ -1,6 +1,6 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
-        <script> alert("{{messages[-1]}}") </script> 
+        <script> alert("{{messages[-1][-1]}}") </script> 
     {% endif %}
 {% endwith %}
 
