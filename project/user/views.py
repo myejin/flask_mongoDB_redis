@@ -14,8 +14,8 @@ class Signup(MethodView):
         if form.validate_on_submit() == False:            
             for msg in form.errors.values():
                 if msg:
-                    flash(str(msg[0]))
-                    return render_template('signup.html', form = form) 
+                    flash(str(msg[0]), 'error')
+                    return redirect('/signup/')
 
         userid = form.data.get('userid')
         password = form.data.get('password')
@@ -39,8 +39,8 @@ class Login(MethodView):
         if form.validate_on_submit() == False:            
             for msg in form.errors.values():
                 if msg:
-                    flash(str(msg[0]))
-                    return render_template('login.html', form = form) 
+                    flash(str(msg[0]), 'error')
+                    return redirect('/login/')
 
         session['userid'] = form.data.get('userid')
         flash('로그인 되었습니다!')

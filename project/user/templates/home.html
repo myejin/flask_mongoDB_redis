@@ -1,7 +1,7 @@
-{% with msg = get_flashed_messages() %} 
-    {% if msg %} 
-        <script> alert("{{msg[-1]}}") </script> 
-    {% endif %} 
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <script> alert("{{messages[-1]}}") </script> 
+    {% endif %}
 {% endwith %}
 
 <!DOCTYPE html>
