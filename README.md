@@ -13,10 +13,11 @@ $ python3 app.py
 
 ## 파이썬 모듈
   - flask
-  - pymongo 
   - redis 
-  - Flask-WTF 
+  - Flask-WTF
+  - Flask-PyMongo 
   - Flask-Session
+  - pytest
 <br><br>
 
 ## UI 테스트
@@ -53,3 +54,17 @@ $ python3 app.py
     - 홈 화면 (로그아웃)
       
       ![그림6](https://user-images.githubusercontent.com/42771578/123539713-f23a8900-d775-11eb-8491-ad97ca583333.png)
+      
+## 유닛 테스트
+
+```bash
+$ pytest
+```
+
+![그림7](https://user-images.githubusercontent.com/42771578/123958943-975c9800-d9e8-11eb-8bb9-5d3d2b5c217d.png)
+
+```bash
+$ pytest --cov=project
+```
+
+![그림8](https://user-images.githubusercontent.com/42771578/123958937-962b6b00-d9e8-11eb-9c54-be8f4d37d1b4.png)
