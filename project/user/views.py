@@ -1,7 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from flask import render_template, redirect, flash, session
 from flask.views import MethodView
-from ..model import conn 
 from .forms import Signup_Form, Login_Form
+from project import mongo 
 
 class Home(MethodView):
     def get(self):
@@ -24,10 +27,9 @@ class Signup(MethodView):
             'id':userid,
             'pw':password
         }
-        conn.db.user.insert_one(doc)
+        mongo.db.user.insert_one(doc)
         # 에러핸들러
         flash('Signed up successfully.', 'no error') 
-        conn.close()
         return redirect('/')
         
     def get(self):
@@ -43,7 +45,7 @@ class Login(MethodView):
                     return redirect('/login/')
 
         session['userid'] = form.data.get('userid')
-        flash("You're logged in.", 'no error')
+        flash('You are logged in.', 'no error')
         return redirect('/')
         
     def get(self):
