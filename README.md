@@ -5,7 +5,7 @@
 
 ## 실행방법
 ```bash
-$ /bin/bash settings.sh
+$ /bin/bash settings.sh (or pip install -r requirements.txt)
 $ python3 app.py
 ```
 'http://localhost:5000' 접속 :point_right: 홈 화면으로 이동
@@ -18,6 +18,7 @@ $ python3 app.py
   - Flask-PyMongo 
   - Flask-Session
   - pytest
+  - pytest-cov
 <br><br>
 
 ## UI 테스트
@@ -60,9 +61,10 @@ $ python3 app.py
 ```bash
 $ pytest
 ```
+:thumbsup: Push 발생시 자동 수행 :grey_exclamation:
 
 ![그림7](https://user-images.githubusercontent.com/42771578/123958943-975c9800-d9e8-11eb-8bb9-5d3d2b5c217d.png)
-
+<br><br>
 ```bash
 $ pytest --cov=project
 ```
