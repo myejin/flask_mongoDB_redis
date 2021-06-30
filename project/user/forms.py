@@ -24,12 +24,12 @@ class Signup_Form(FlaskForm):
 def Login_Valid(form, field):
     if not conn.db.user.count_documents({'id':field.data}):
         conn.close()
-        raise ValidationError('존재하지 않는 ID입니다.')
+        raise ValidationError('The ID does not exist.')
     data = conn.db.user.find({'id':field.data})
     conn.close()
     if data[0]['pw'] != form['password'].data:
-        raise ValidationError('비밀번호가 일치하지 않습니다.')
+        raise ValidationError('The password does not match.')
 
 class Login_Form(FlaskForm):
-    userid = StringField('userid', [InputRequired(message = '값을 입력하세요.'), Login_Valid])
-    password = PasswordField('password', [InputRequired(message = '값을 입력하세요.')])
+    userid = StringField('userid', [InputRequired(message = 'blank'), Login_Valid])
+    password = PasswordField('password', [InputRequired(message = 'blank')])
