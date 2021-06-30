@@ -17,6 +17,7 @@ def test_client():
 @pytest.fixture(scope='module')
 def test_db(test_client):
     conn = MongoClient('localhost')
+    conn.db.user.delete_many({})
     doc = {
         'userid' : 'test001',
         'password' : 'test001!'
