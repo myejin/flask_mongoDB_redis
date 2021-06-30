@@ -5,5 +5,5 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org redis-server python3 python3-pip 
 sudo systemctl start mongod
 sudo systemctl enable mongod
-sudo pip3 install redis flask Flask-WTF Flask-Session Flask-PyMongo pytest
+sudo pip3 install redis flask Flask-WTF Flask-Session Flask-PyMongo pytest pytest-cov
 sudo service redis-server restart
