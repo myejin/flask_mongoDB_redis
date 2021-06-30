@@ -1,12 +1,14 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from flask_wtf import FlaskForm 
 from wtforms import StringField, PasswordField
 from wtforms.validators import InputRequired, Length, EqualTo, ValidationError
 import re
-from ..model import conn
+from project import mongo 
 
 def Signup_Valid_Id(form, field):
-    cnt = conn.db.user.count_documents({'id':field.data})
-    conn.close()
+    cnt = mongo.db.user.count_documents({'id':field.data})
     if cnt:
         raise ValidationError('The ID already exists.')
 
@@ -22,11 +24,9 @@ class Signup_Form(FlaskForm):
 
 
 def Login_Valid(form, field):
-    if not conn.db.user.count_documents({'id':field.data}):
-        conn.close()
+    if not mongo.db.user.count_documents({'id':field.data}):
         raise ValidationError('The ID does not exist.')
-    data = conn.db.user.find({'id':field.data})
-    conn.close()
+    data = mongo.db.user.find({'id':field.data})
     if data[0]['pw'] != form['password'].data:
         raise ValidationError('The password does not match.')
 
