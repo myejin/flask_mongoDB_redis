@@ -18,7 +18,7 @@
 <body>
     <div class="container">
       <form class="form-signin" method="POST" >
-        {{form.csrf_token}}
+        {{form.hidden_tag()}}
         <h2 class="form-signin-heading">회원가입</h2>
         {{form.userid(class="form-control", placeholder="ID (영문, 숫자 포함 7-15자리)")}}
         {{form.password(class="form-control", placeholder="PW (영문, 숫자, 특수문자 포함 7-15자리)")}}
