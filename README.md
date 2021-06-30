@@ -34,7 +34,7 @@ $ python3 app.py
 
     - wtforms 적용, flash 메세지
     
-      :heavy_check_mark: 이미지 캡처 후 localhost로 IP변경 :heavy_check_mark:
+      :heavy_check_mark: 이미지 캡처 후 localhost로 IP변경했음 :heavy_check_mark:
     
       ![그림2](https://user-images.githubusercontent.com/42771578/123518529-40517d00-d6e1-11eb-8107-aedf19ff0590.png)
 
