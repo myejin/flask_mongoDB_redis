@@ -13,6 +13,7 @@ $ python3 app.py
 
 ## 파이썬 모듈
   - flask
+  - Jinja2 
   - redis 
   - Flask-WTF
   - Flask-PyMongo 
