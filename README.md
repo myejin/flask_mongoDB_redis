@@ -62,7 +62,7 @@ $ python3 app.py
 ```bash
 $ pytest
 ```
-:thumbsup: Push 발생시 자동 수행 :grey_exclamation:
+:thumbsup: git push 발생시 자동 수행 :grey_exclamation:
 
 ![그림7](https://user-images.githubusercontent.com/42771578/123958943-975c9800-d9e8-11eb-8bb9-5d3d2b5c217d.png)
 <br><br>
