@@ -5,7 +5,7 @@
 
 ## 실행방법
 ```bash
-$ /bin/bash settings.sh (or pip install -r requirements.txt)
+$ /bin/bash settings.sh
 $ python3 app.py
 ```
 'http://localhost:5000' 접속 :point_right: 홈 화면으로 이동
