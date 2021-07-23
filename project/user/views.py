@@ -21,14 +21,14 @@ class Signup(MethodView):
                     return redirect('/signup/')
 
         userid = form.data.get('userid')
-        password = form.data.get('password')
-        # 해쉬
+        password = form.data.get('password') # 해쉬 X
+
         doc = {
             'id':userid,
             'pw':password
         }
         mongo.db.user.insert_one(doc)
-        # 에러핸들러
+        
         flash('Signed up successfully.', 'no error') 
         return redirect('/')
         
